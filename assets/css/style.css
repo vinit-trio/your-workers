@@ -562,11 +562,14 @@
   .py-30 {
     padding-block: calc(var(--spacing) * 30);
   }
-  .py-100 {
-    padding-block: calc(var(--spacing) * 100);
+  .py-\[12vw\] {
+    padding-block: 12vw;
   }
   .py-spc {
     padding-block: var(--spacing-spc);
+  }
+  .pt-100 {
+    padding-top: calc(var(--spacing) * 100);
   }
   .pr-40 {
     padding-right: calc(var(--spacing) * 40);
@@ -856,11 +859,6 @@
   .xl\:py-50 {
     @media (width >= 1200px) {
       padding-block: calc(var(--spacing) * 50);
-    }
-  }
-  .xl\:py-175 {
-    @media (width >= 1200px) {
-      padding-block: calc(var(--spacing) * 175);
     }
   }
   .xl\:pr-250 {

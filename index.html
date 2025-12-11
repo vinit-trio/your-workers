@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="theme-color" content="#0E0E0E">
+    <meta name="theme-color" content="#FF4900">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -14,12 +14,12 @@
     <title>Your workers | GmbH</title>
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+
+    <link rel="icon" href="assets/images/dark-favicon.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="assets/images/light-favicon.png" media="(prefers-color-scheme: dark)">
 
     <link rel="stylesheet" href="assets/css/swiper.css">
-    <link rel="preload" href="assets/fonts/fonts.css">
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script defer src="assets/js/alpine.js"></script>
@@ -27,7 +27,7 @@
 
 <body x-data="scrollSpy">
 
-    <header
+    <header role="banner"
         class="absolute top-0 left-0 right-0 z-99999 text-white uppercase font-medium py-24 transition-all duration-300"
         id="header" x-data="{ open: false }" @keydown.window.escape="open = false">
         <div class="container">
@@ -131,9 +131,9 @@
             </div>
         </div>
     </header>
-    <main>
-        <section class="relative z-10 flex items-center text-white text-center grow py-100 xl:py-175">
-            <div class="container">
+    <main role="main">
+        <section class="relative z-10 flex items-center text-white text-center grow pt-100">
+            <div class="container py-[12vw]">
                 <h1 class="text-h2 uppercase mb-30 xl:mb-60">
                     We work for you. <br> Unsere Crew für dein Event
                 </h1>
@@ -264,7 +264,8 @@
                         </div>
                     </div>
                     <div class="image aspect-video 2xl:aspect-auto not-2xl:-order-1 relative">
-                        <img src="assets/images/wir.webp" alt="Warum Your Workers?" class="size-full object-cover absolute inset-0  ">
+                        <img src="assets/images/wir.webp" alt="Warum Your Workers?"
+                            class="size-full object-cover absolute inset-0  ">
                     </div>
                 </div>
             </div>
@@ -1300,7 +1301,7 @@
         </section>
     </main>
 
-    <footer class="py-25 xl:py-50 bg-black text-white font-open">
+    <footer role="contentinfo" class="py-25 xl:py-50 bg-black text-white font-open">
         <div class="container">
             <div class="grid sm:grid-cols-2 md:grid-cols-3 2xl:flex gap-32 justify-between items-start flex-wrap">
                 <div>
