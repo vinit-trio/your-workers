@@ -270,19 +270,29 @@
                 </div>
             </div>
         </section>
-        <section id="service" class="pb-spc">
+        <section id="service" class="pb-spc" x-data="{open:1}">
             <div class="container">
                 <h2 class="text-h1 font-semibold text-orange mb-8 xl:mb-16">
                     Unsere Leistungen
                 </h2>
-                <h3 class="text-h3 mb-34 xl:mb-68">
+                <h3 class="text-h3 mb-68">
                     Wir bieten ein breites Spektrum an Personal, um Ihre Veranstaltung zum Erfolg zu führen.
                 </h3>
                 <div class="flex flex-col xl:flex-row gap-32 xl:gap-64">
-                    <div class="image shrink-0">
-                        <img src="assets/images/empli.webp" alt="Unsere Leistungen">
+                    <div class="image shrink-0 not-xl:hidden">
+                        <img x-show="open == 1" src="assets/images/instrument-1.png" alt="Unsere Leistungen">
+                        <img x-show="open == 2" src="assets/images/instrument-2.png" alt="Unsere Leistungen">
+                        <img x-show="open == 3" src="assets/images/instrument-3.png" alt="Unsere Leistungen">
+                        <img x-show="open == 4" src="assets/images/instrument-4.png" alt="Unsere Leistungen">
+                        <img x-show="open == 5" src="assets/images/instrument-5.png" alt="Unsere Leistungen">
+                        <img x-show="open == 6" src="assets/images/instrument-6.png" alt="Unsere Leistungen">
+                        <img x-show="open == 7" src="assets/images/instrument-7.png" alt="Unsere Leistungen">
+                        <img x-show="open == 8" src="assets/images/instrument-8.png" alt="Unsere Leistungen">
+                        <img x-show="open == 9" src="assets/images/instrument-9.png" alt="Unsere Leistungen">
+                        <img x-show="open == 10" src="assets/images/instrument-10.png" alt="Unsere Leistungen">
+                        <img x-show="open == 11" src="assets/images/instrument-11.png" alt="Unsere Leistungen">
                     </div>
-                    <div class="content grow" x-data="{open:1}">
+                    <div class="content grow">
                         <ul class="space-y-24">
                             <li>
                                 <button type="button" class="w-full font-medium"
@@ -309,6 +319,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_1"
                                     x-bind:style="open == 1 ? 'max-height: ' + $refs.ans_1.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-1.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.
@@ -341,6 +353,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_2"
                                     x-bind:style="open == 2 ? 'max-height: ' + $refs.ans_2.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-2.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.
@@ -373,6 +387,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_3"
                                     x-bind:style="open == 3 ? 'max-height: ' + $refs.ans_3.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-3.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.
@@ -405,6 +421,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_4"
                                     x-bind:style="open == 4 ? 'max-height: ' + $refs.ans_4.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-4.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.
@@ -437,6 +455,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_5"
                                     x-bind:style="open == 5 ? 'max-height: ' + $refs.ans_5.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-5.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.
@@ -469,6 +489,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_6"
                                     x-bind:style="open == 6 ? 'max-height: ' + $refs.ans_6.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-6.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.
@@ -501,6 +523,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_7"
                                     x-bind:style="open == 7 ? 'max-height: ' + $refs.ans_7.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-7.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.
@@ -533,6 +557,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_8"
                                     x-bind:style="open == 8 ? 'max-height: ' + $refs.ans_8.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-8.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.
@@ -565,6 +591,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_9"
                                     x-bind:style="open == 9 ? 'max-height: ' + $refs.ans_9.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-9.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.
@@ -597,6 +625,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_10"
                                     x-bind:style="open == 10 ? 'max-height: ' + $refs.ans_10.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-10.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.
@@ -629,6 +659,8 @@
                                 <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_11"
                                     x-bind:style="open == 11 ? 'max-height: ' + $refs.ans_11.scrollHeight + 'px' : ''">
                                     <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <img src="assets/images/instrument-11.png" alt="Stagehands"
+                                            class="w-2/3 xl:hidden">
                                         <p>
                                             Unterstützen beim Auf- und Abbau von Bühnen, Technik und
                                             Veranstaltungsstrukturen.

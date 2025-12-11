@@ -323,6 +323,9 @@
   .mb-34 {
     margin-bottom: calc(var(--spacing) * 34);
   }
+  .mb-68 {
+    margin-bottom: calc(var(--spacing) * 68);
+  }
   .mb-spc {
     margin-bottom: var(--spacing-spc);
   }
@@ -365,6 +368,12 @@
   }
   .max-h-full {
     max-height: 100%;
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
+  .w-2\/3 {
+    width: calc(2/3 * 100%);
   }
   .w-24 {
     width: calc(var(--spacing) * 24);
@@ -727,6 +736,11 @@
       align-items: center;
     }
   }
+  .not-xl\:hidden {
+    @media not (width >= 1200px) {
+      display: none;
+    }
+  }
   .not-2xl\:-order-1 {
     @media not (width >= 1400px) {
       order: calc(1 * -1);
@@ -850,6 +864,11 @@
   .xl\:mb-68 {
     @media (width >= 1200px) {
       margin-bottom: calc(var(--spacing) * 68);
+    }
+  }
+  .xl\:hidden {
+    @media (width >= 1200px) {
+      display: none;
     }
   }
   .xl\:w-200 {
