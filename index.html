@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="theme-color" content="#0E0E0E">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" We work for you. Unsere Crew für dein Event">
+
+    <title>Your workers | GmbH</title>
+
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script defer src="assets/js/alpine.js"></script>
+</head>
+
+<body x-data="scrollSpy">
+
+    <header class="absolute top-0 left-0 right-0 z-99999 text-white uppercase font-medium py-24 transition-all duration-300" id="header"
+        x-data="{ open: false }" @keydown.window.escape="open = false">
+        <div class="container">
+            <div class="row flex justify-between not-sm:items-center gap-56">
+                <a class="logo_img" href="index.html" aria-label="Your workers | GmbH">
+                    <img src="assets/images/logo.svg" alt="Your workers logo"
+                        class="w-[clamp(9.375rem,8.375rem+5vw,14.375rem)]">
+                </a>
+                <nav class="shrink-0 not-sm:hidden">
+                    <ul class="flex gap-14 md:gap-28">
+                        <li>
+                            <a :class="active === 'wir' ? 'active' : ''" href="#wir" class="link">
+                                Wir
+                            </a>
+                        </li>
+                        <li>
+                            <a :class="active === 'service' ? 'active' : ''" href="#service" class="link">
+                                Service
+                            </a>
+                        </li>
+                        <li>
+                            <a :class="active === 'referenzen' ? 'active' : ''" href="#referenzen" class="link">
+                                Referenzen
+                            </a>
+                        </li>
+                        <li>
+                            <a :class="active === 'joinUs' ? 'active' : ''" href="#joinUs" class="link">
+                                Join us
+                            </a>
+                        </li>
+                        <li>
+                            <a :class="active === 'kontakt' ? 'active' : ''" href="#kontakt" class="link">
+                                Kontakt
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <button @click="open = true" aria-label="Mobile-Menü-Umschalter"
+                    class="border p-10 sm:hidden rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-menu">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 8l16 0" />
+                        <path d="M4 16l16 0" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform"
+            x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+            x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0"
+            x-transition:leave-end="translate-x-full" @click="open = false" class="fixed inset-0 bg-black/30 z-40"
+            style="display: none;">
+        </div>
+        <div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform"
+            x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+            x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0"
+            x-transition:leave-end="translate-x-full"
+            class="fixed right-0 top-0 h-full w-300 bg-black shadow-lg z-50 transform py-6 overflow-y-auto max-h-full"
+            @click.outside="open = false" style="display: none;">
+            <div>
+                <button @click="open = false" aria-label="Close Menu" class="text-2xl absolute top-0 right-0 p-16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-x hover:rotate-180">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </button>
+                <nav class="shrink-0">
+                    <ul class="flex flex-col gap-14 md:gap-28 px-40 py-30">
+                        <li>
+                            <a @click="open = false" href="#wir" class="link active">
+                                Wir
+                            </a>
+                        </li>
+                        <li>
+                            <a @click="open = false" href="#service" class="link">
+                                Service
+                            </a>
+                        </li>
+                        <li>
+                            <a @click="open = false" href="#referenzen" class="link">
+                                Referenzen
+                            </a>
+                        </li>
+                        <li>
+                            <a @click="open = false" href="#joinUs" class="link">
+                                Join us
+                            </a>
+                        </li>
+                        <li>
+                            <a @click="open = false" href="#kontakt" class="link">
+                                Kontakt
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="relative z-10 flex items-center text-white text-center grow py-100 xl:py-175">
+            <div class="container">
+                <h1 class="text-h2 uppercase mb-30 xl:mb-60">
+                    We work for you. <br> Unsere Crew für dein Event
+                </h1>
+                <div class="flex flex-wrap w-fit mx-auto gap-8 xl:gap-16 font-open">
+                    <a href="#" class="btn1 grow">
+                        Jetzt Crew buchen
+                    </a>
+                    <a href="#" class="btn2 grow">
+                        Entdecken Sie, was wir tun
+                    </a>
+                </div>
+            </div>
+            <div class="absolute inset-0 -z-20">
+                <img src="assets/images/hero-bg.webp" alt="Hintergrund des Heldenbereichs"
+                    class="size-full object-cover">
+            </div>
+            <div class="absolute inset-0 gradient_1 -z-10"></div>
+        </section>
+        <section id="wir" class="py-spc">
+            <div class="container">
+                <div class="grid 2xl:grid-cols-2 gap-24 xl:gap-48">
+                    <div class="content">
+                        <h2 class="text-h1 font-semibold text-orange mb-16 xl:mb-32">
+                            Wir
+                        </h2>
+                        <div class="text mb-24 xl:mb-48 font-open">
+                            <p>
+                                Entdeckt unsere professionellen Leistungen für die Vermittlung von qualifiziertem
+                                Personal für deine Veranstaltungen. Bei uns stehen deine Events im Mittelpunkt und
+                                wir sorgen dafür, dass deine Veranstaltung reibungslos abläuft.
+                            </p>
+                            <p>
+                                Von Stagehands, Messehelfer über Staplerfahrer bis hin zu Cateringhilfen - wir sind
+                                dein Partner für zuverlässiges und erfahrenes Eventpersonal für den Großraum
+                                Nürnberg, Bayern und auf Wunsch gerne darüber hinaus.
+                            </p>
+                            <p>
+                                Wir stellen dir das Personal im Rahmen der Arbeitnehmerüberlassung zur Verfügung.
+                                Zusätzlich bieten wir dir
+                            </p>
+                        </div>
+                        <h3 class="text-h3 font-medium mb-16 xl:mb-32">
+                            Warum Your Workers?
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-16 xl:gap-32 font-open">
+                            <div class="flex flex-col 2xl:flex-row gap-6 xl:gap-12 items-start">
+                                <img src="assets/images/medal.svg" alt="" class="shrink-0 w-28 mt-10">
+                                <div>
+                                    <h4>
+                                        Erfahrung
+                                    </h4>
+                                    <div class="text text-gray text-h5">
+                                        <p>
+                                            Mit unserer langjähriger Erfahrung in der Branche kennen wir alle
+                                            Anforderungen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col 2xl:flex-row gap-6 xl:gap-12 items-start">
+                                <img src="assets/images/group.svg" alt="" class="shrink-0 w-28 mt-10">
+                                <div>
+                                    <h4>
+                                        Qualifiziertes Personal
+                                    </h4>
+                                    <div class="text text-gray text-h5">
+                                        <p>
+                                            Wir setzen auf geschultes und professionelles Personal, um höchste Qualität
+                                            zu gewährleisten
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col 2xl:flex-row gap-6 xl:gap-12 items-start">
+                                <img src="assets/images/flex.svg" alt="" class="shrink-0 w-28 mt-10">
+                                <div>
+                                    <h4>
+                                        Flexibilität
+                                    </h4>
+                                    <div class="text text-gray text-h5">
+                                        <p>
+                                            Unser Angebot reicht von kleinen Firmenevents bis hin zu großen Festivals.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col 2xl:flex-row gap-6 xl:gap-12 items-start">
+                                <img src="assets/images/reliability.svg" alt="" class="shrink-0 w-28 mt-10">
+                                <div>
+                                    <h4>
+                                        Zuverlässigkeit
+                                    </h4>
+                                    <div class="text text-gray text-h5">
+                                        <p>
+                                            Verlass dich einfach auf uns. Wir stellen sicher, dass dein Event
+                                            reibungslos verläuft
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col 2xl:flex-row gap-6 xl:gap-12 items-start">
+                                <img src="assets/images/flex.svg" alt="" class="shrink-0 w-28 mt-10">
+                                <div>
+                                    <h4>
+                                        Codex
+                                    </h4>
+                                    <div class="text text-gray text-h5">
+                                        <p>
+                                            Unser Angebot reicht von kleinen Firmenevents bis hin zu großen Festivals.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col 2xl:flex-row gap-6 xl:gap-12 items-start">
+                                <img src="assets/images/medal.svg" alt="" class="shrink-0 w-28 mt-10">
+                                <div>
+                                    <h4>
+                                        Wir sind Mitglied des GVP
+                                    </h4>
+                                    <div class="text text-gray text-h5">
+                                        <p>
+                                            Mit unserer langjähriger Erfahrung in der Branche kennen wir alle
+                                            Anforderungen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image aspect-video 2xl:aspect-auto not-2xl:-order-1">
+                        <img src="assets/images/wir.webp" alt="Warum Your Workers?" class="size-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="service" class="pb-spc">
+            <div class="container">
+                <h2 class="text-h1 font-semibold text-orange mb-8 xl:mb-16">
+                    Unsere Leistungen
+                </h2>
+                <h3 class="text-h3 mb-34 xl:mb-68">
+                    Wir bieten ein breites Spektrum an Personal, um Ihre Veranstaltung zum Erfolg zu führen.
+                </h3>
+                <div class="flex flex-col xl:flex-row gap-32 xl:gap-64">
+                    <div class="image shrink-0">
+                        <img src="assets/images/empli.webp" alt="Unsere Leistungen">
+                    </div>
+                    <div class="content grow" x-data="{open:1}">
+                        <ul class="space-y-24">
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 1 ? open = 1 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Stagehands.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Stagehands
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 1 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 1 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_1"
+                                    x-bind:style="open == 1 ? 'max-height: ' + $refs.ans_1.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 2 ? open = 2 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Showcrew.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Showcrew
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 2 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 2 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_2"
+                                    x-bind:style="open == 2 ? 'max-height: ' + $refs.ans_2.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 3 ? open = 3 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Messehelfer.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Messehelfer
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 3 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 3 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_3"
+                                    x-bind:style="open == 3 ? 'max-height: ' + $refs.ans_3.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 4 ? open = 4 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Stagehands.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Steelhands
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 4 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 4 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_4"
+                                    x-bind:style="open == 4 ? 'max-height: ' + $refs.ans_4.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 5 ? open = 5 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Staplerfahrer.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Staplerfahrer
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 5 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 5 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_5"
+                                    x-bind:style="open == 5 ? 'max-height: ' + $refs.ans_5.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 6 ? open = 6 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Sitecrew.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Sitecrew
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 6 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 6 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_6"
+                                    x-bind:style="open == 6 ? 'max-height: ' + $refs.ans_6.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 7 ? open = 7 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Crewchief.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Crewchief
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 7 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 7 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_7"
+                                    x-bind:style="open == 7 ? 'max-height: ' + $refs.ans_7.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 8 ? open = 8 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Crewcontroller.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Crewcontroller
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 8 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 8 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_8"
+                                    x-bind:style="open == 8 ? 'max-height: ' + $refs.ans_8.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 9 ? open = 9 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Runner.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Runner
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 9 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 9 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_9"
+                                    x-bind:style="open == 9 ? 'max-height: ' + $refs.ans_9.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 10 ? open = 10 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Cateringhilfen.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Cateringhilfen
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 10 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 10 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_10"
+                                    x-bind:style="open == 10 ? 'max-height: ' + $refs.ans_10.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full font-medium"
+                                    @click="open !== 11 ? open = 11 : open = null">
+                                    <div class="flex items-center justify-between text-h3 gap-16 xl:gap-32">
+                                        <div class="flex gap-8 xl:gap-16">
+                                            <img src="assets/images/Garderobieren.svg" alt="Stagehands Symbol"
+                                                class="w-36 shrink-0">
+                                            <span>
+                                                Garderobieren
+                                            </span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            class="transition-all duration-300" :class="open == 11 && 'rotate-180'"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path class="transition-all duration-300" d="M12 5l0 14"
+                                                :class="open == 11 && 'opacity-0'" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all max-h-0 duration-300" x-ref="ans_11"
+                                    x-bind:style="open == 11 ? 'max-height: ' + $refs.ans_11.scrollHeight + 'px' : ''">
+                                    <div class="text text-gray font-open pl-44 xl:pl-52">
+                                        <p>
+                                            Unterstützen beim Auf- und Abbau von Bühnen, Technik und
+                                            Veranstaltungsstrukturen.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-spc bg-black text-white">
+            <div class="container">
+                <h2 class="text-h1 font-semibold text-center mb-spc">
+                    Unsere Partner & Kunden
+                </h2>
+                <div class="marquee flex items-center overflow-hidden mb-spc">
+                    <div
+                        class="group gap-40 lg:gap-125 xl:gap-250 pr-40 lg:pr-125 xl:pr-250 flex items-center min-w-max">
+                        <img src="assets/images/brand-logos-1.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-2.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-3.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-4.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-5.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-6.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-7.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-8.png" alt="" class="w-150 xl:w-200">
+                    </div>
+                    <div class="group gap-40 lg:gap-125 xl:gap-250 pr-40 lg:pr-125 xl:pr-250 flex items-center min-w-max"
+                        aria-hidden="true">
+                        <img src="assets/images/brand-logos-1.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-2.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-3.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-4.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-5.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-6.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-7.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-8.png" alt="" class="w-150 xl:w-200">
+                    </div>
+                </div>
+                <div class="marquee flex items-center overflow-hidden second">
+                    <div
+                        class="group gap-40 lg:gap-125 xl:gap-250 pr-40 lg:pr-125 xl:pr-250 flex items-center min-w-max flex-row-reverse">
+                        <img src="assets/images/brand-logos-1.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-2.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-3.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-4.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-5.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-6.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-7.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-8.png" alt="" class="w-150 xl:w-200">
+                    </div>
+                    <div class="group gap-40 lg:gap-125 xl:gap-250 pr-40 lg:pr-125 xl:pr-250 flex items-center min-w-max flex-row-reverse"
+                        aria-hidden="true">
+                        <img src="assets/images/brand-logos-1.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-2.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-3.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-4.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-5.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-6.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-7.png" alt="" class="w-150 xl:w-200">
+                        <img src="assets/images/brand-logos-8.png" alt="" class="w-150 xl:w-200">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="referenzen" class="py-spc text-center">
+            <div class="container">
+                <h2 class="text-h1 font-semibold mb-8 xl:mb-16 text-orange">
+                    Referenzen
+                </h2>
+                <h3 class="text-h3 mb-9 xl:mb-18">
+                    Erfolgreiche Events - von uns umgesetzt.
+                </h3>
+
+                <div class="grid xsm:grid-cols-2 sm:grid-cols-3 p-4 lg:p-15 2xl:p-25" x-ref="fancybox_gallery">
+                    <div x-data="{ open: false }">
+                        <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
+                            <img src="assets/images/referenzen-1.webp" alt="Referenzen Galeriebild"
+                                class="size-full object-cover">
+                        </div>
+                        <div x-show="open" x-transition.opacity data-gallery
+                            class="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+                            @click.self="open = false">
+                            <div x-show="open" x-transition.scale
+                                class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="swiper_button_prev absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 left-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17 9H0.999999M0.999999 9L9 1M0.999999 9L9 17" stroke="black"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="swiper_button_next absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 right-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 9H17M17 9L9 1M17 9L9 17" stroke="black" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="swiper thumbs-slider w-full max-w-1400">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button @click="open = false" class="absolute z-50 top-0 right-0 p-20">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M18 6l-12 12" />
+                                    <path d="M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }">
+                        <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
+                            <img src="assets/images/referenzen-2.webp" alt="Referenzen Galeriebild"
+                                class="size-full object-cover">
+                        </div>
+                        <div x-show="open" x-transition.opacity data-gallery
+                            class="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+                            @click.self="open = false">
+                            <div x-show="open" x-transition.scale
+                                class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="swiper_button_prev absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 left-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17 9H0.999999M0.999999 9L9 1M0.999999 9L9 17" stroke="black"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="swiper_button_next absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 right-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 9H17M17 9L9 1M17 9L9 17" stroke="black" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="swiper thumbs-slider w-full max-w-1400">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button @click="open = false" class="absolute z-50 top-0 right-0 p-20">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M18 6l-12 12" />
+                                    <path d="M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }">
+                        <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
+                            <img src="assets/images/referenzen-3.webp" alt="Referenzen Galeriebild"
+                                class="size-full object-cover">
+                        </div>
+                        <div x-show="open" x-transition.opacity data-gallery
+                            class="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+                            @click.self="open = false">
+                            <div x-show="open" x-transition.scale
+                                class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="swiper_button_prev absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 left-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17 9H0.999999M0.999999 9L9 1M0.999999 9L9 17" stroke="black"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="swiper_button_next absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 right-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 9H17M17 9L9 1M17 9L9 17" stroke="black" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="swiper thumbs-slider w-full max-w-1400">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button @click="open = false" class="absolute z-50 top-0 right-0 p-20">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M18 6l-12 12" />
+                                    <path d="M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }">
+                        <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
+                            <img src="assets/images/referenzen-4.webp" alt="Referenzen Galeriebild"
+                                class="size-full object-cover">
+                        </div>
+                        <div x-show="open" x-transition.opacity data-gallery
+                            class="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+                            @click.self="open = false">
+                            <div x-show="open" x-transition.scale
+                                class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="swiper_button_prev absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 left-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17 9H0.999999M0.999999 9L9 1M0.999999 9L9 17" stroke="black"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="swiper_button_next absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 right-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 9H17M17 9L9 1M17 9L9 17" stroke="black" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="swiper thumbs-slider w-full max-w-1400">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button @click="open = false" class="absolute z-50 top-0 right-0 p-20">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M18 6l-12 12" />
+                                    <path d="M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }">
+                        <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
+                            <img src="assets/images/referenzen-5.webp" alt="Referenzen Galeriebild"
+                                class="size-full object-cover">
+                        </div>
+                        <div x-show="open" x-transition.opacity data-gallery
+                            class="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+                            @click.self="open = false">
+                            <div x-show="open" x-transition.scale
+                                class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="swiper_button_prev absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 left-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17 9H0.999999M0.999999 9L9 1M0.999999 9L9 17" stroke="black"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="swiper_button_next absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 right-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 9H17M17 9L9 1M17 9L9 17" stroke="black" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="swiper thumbs-slider w-full max-w-1400">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button @click="open = false" class="absolute z-50 top-0 right-0 p-20">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M18 6l-12 12" />
+                                    <path d="M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }">
+                        <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
+                            <img src="assets/images/referenzen-6.webp" alt="Referenzen Galeriebild"
+                                class="size-full object-cover">
+                        </div>
+                        <div x-show="open" x-transition.opacity data-gallery
+                            class="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+                            @click.self="open = false">
+                            <div x-show="open" x-transition.scale
+                                class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="max-w-1400 mx-auto size-full object-cover"
+                                                src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="swiper_button_prev absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 left-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17 9H0.999999M0.999999 9L9 1M0.999999 9L9 17" stroke="black"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="swiper_button_next absolute bg-white top-1/2 z-50 -translate-y-1/2 p-15 scale-75 md:scale-100 right-10">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 9H17M17 9L9 1M17 9L9 17" stroke="black" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="swiper thumbs-slider w-full max-w-1400">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-2.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-3.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-4.webp" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/gallery-img-1.webp" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button @click="open = false" class="absolute z-50 top-0 right-0 p-20">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M18 6l-12 12" />
+                                    <path d="M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="joinUs" class="bg-black text-white py-spc font-open">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-24 xl:gap-48 items-center">
+                    <div>
+                        <h2 class="text-76 font-semibold mb-8 xl:mb-16 font-oswald">
+                            Werde Teil unserer Crew wir freuen uns auf dich!
+                        </h2>
+                        <div class="text mb-24 xl:mb-48">
+                            <p>
+                                Du bist motiviert, zuverlässig und hast eine Leidenschaft für Events? Dann bist du bei
+                                uns genau richtig! Bewirb dich jetzt und werde Teil eines dynamischen Teams, das die
+                                größten Veranstaltungen zum Leben erweckt.
+                            </p>
+                        </div>
+                        <a href="#" class="btn2">
+                            Jetzt Bewerben
+                        </a>
+                    </div>
+                    <form class="bg-white p-20 xsm:p-40 2xl:p-56 text-black space-y-12 2xl:space-y-24">
+                        <div>
+                            <label for="name1">Name</label>
+                            <input type="text" name="name1" id="name1" placeholder="Dein Name">
+                        </div>
+                        <div>
+                            <label for="mail1">Mail</label>
+                            <input type="mail" name="mail1" id="mail1" placeholder="deine.email@example.com">
+                        </div>
+                        <div>
+                            <label for="telephone1">Telefon number</label>
+                            <input type="tel" name="telephone1" id="telephone1" placeholder="+49 123456789">
+                        </div>
+                        <div>
+                            <label for="message1">Nachricht</label>
+                            <textarea name="message1" id="message1" placeholder=" Deine Nachrichtan uns...."></textarea>
+                        </div>
+                        <button type="submit">Bewerbung Senden</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="kontakt" class="py-spc font-open">
+            <div class="container">
+                <h2 class="text-h1 font-semibold mb-8 xl:mb-16 font-oswald text-orange">
+                    Kontakt
+                </h2>
+                <h3 class="text-h3 font-oswald mb-34 xl:mb-68">
+                    Haben Sie Fragen oder möchten ein Projekt besprechen? Wir sind hier, um zu helfen.
+                </h3>
+                <div class="grid lg:grid-cols-2 gap-24 xl:gap-48 items-center">
+                    <div>
+                        <h4 class="font-oswald mb-16 xl:mb-32">
+                            Kontakt Details
+                        </h4>
+                        <ul class="space-y-12 xl:space-y-24 mb-25 xl:mb-50">
+                            <li>
+                                <a href="tel:+49123456789" class="flex! items-center gap-8 xl:gap-16">
+                                    <img src="assets/images/call.svg" alt="" class="w-24 shrink-0">
+                                    <span>+49 123 456789</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+49123456789" class="flex! items-center gap-8 xl:gap-16">
+                                    <img src="assets/images/mail.svg" alt="" class="w-24 shrink-0">
+                                    <span>info@yourworkers.de</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+49123456789" class="flex! items-center gap-8 xl:gap-16">
+                                    <img src="assets/images/location.svg" alt="" class="w-24 shrink-0">
+                                    <span>
+                                        Musterstraße 123 <br> 12345 Berlin, Deutschland
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="map aspect-[2.13/1] relative grayscale" id="google_map">
+                            <img src="assets/images/map.webp" alt="Google map" class="size-full object-cover">
+                            <button id="loadMapBtn"
+                                class="btn1 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 !bg-black text-base">Load
+                                google map</button>
+                        </div>
+                    </div>
+                    <form class="border border-off-white p-20 xsm:p-40 2xl:p-56 text-black space-y-12 2xl:space-y-24">
+                        <div>
+                            <label for="name2">Name</label>
+                            <input type="text" name="name2" id="name2" placeholder="Dein Name">
+                        </div>
+                        <div>
+                            <label for="mail2">Mail</label>
+                            <input type="mail" name="mail2" id="mail2" placeholder="deine.email@example.com">
+                        </div>
+                        <div>
+                            <label for="telephone2">Telefon number</label>
+                            <input type="tel" name="telephone2" id="telephone2" placeholder="+49 123456789">
+                        </div>
+                        <div>
+                            <label for="message2">Nachricht</label>
+                            <textarea name="message2" id="message2" placeholder=" Deine Nachrichtan uns...."></textarea>
+                        </div>
+                        <button type="submit">Bewerbung Senden</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-25 xl:py-50 bg-black text-white font-open">
+        <div class="container">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 2xl:flex gap-32 justify-between items-start flex-wrap">
+                <div>
+                    <a href="#" class="mb-10 xl:mb-20">
+                        <img src="assets/images/logo.svg" alt="Your workers GmbH" class="w-145">
+                    </a>
+                    <div class="text mb-10 xl:mb-20 max-w-280">
+                        <p>
+                            Zuverlässiges und erfahrenes Eventpersonal für jede Bühne.
+                        </p>
+                    </div>
+                    <ul class="flex gap-8 xl:gap-16">
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img src="assets/images/fb.svg" class="w-40 3xl:w-56" alt="Facebook Konto">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img src="assets/images/ig.svg" class="w-40 3xl:w-56" alt="Instagram Konto">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-h3 font-oswald mb-10 xl:mb-20">
+                        Schnelllink
+                    </p>
+                    <ul class="3xl:space-y-20">
+                        <li><a class="link" href="#">Wir</a></li>
+                        <li><a class="link" href="#">Service</a></li>
+                        <li><a class="link" href="#">Referenzen</a></li>
+                        <li><a class="link" href="#">Join us</a></li>
+                        <li><a class="link" href="#">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-h3 font-oswald mb-10 xl:mb-20">
+                        Begleiten Sie uns
+                    </p>
+                    <ul class="3xl:space-y-20">
+                        <li><a class="link" href="#">Karriere</a></li>
+                        <li><a class="link" href="#">Bewerben</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-h3 font-oswald mb-10 xl:mb-20">
+                        Legal
+                    </p>
+                    <ul class="3xl:space-y-20">
+                        <li><a class="link" href="#">Impressum</a></li>
+                        <li><a class="link" href="#">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-h3 font-oswald mb-10 xl:mb-20">
+                        Kontakt
+                    </p>
+                    <ul class="3xl:space-y-20">
+                        <li><a class="link" href="mailto:info@yourworkers.de">info@yourworkers.de</a></li>
+                        <li><a class="link" href="tel:+49123456789">+49 123 456789</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="assets/images/gvp-logo.png" alt="GVP Markenlogo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- back to top button -->
+    <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
+        class="fixed bottom-20 right-20 bg-red p-10 text-white z-99999 border bg-black" aria-label="Zurück nach oben"
+        title="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 15l6 -6l6 6" />
+        </svg>
+    </button>
+    <!-- back to top button -->
+
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
