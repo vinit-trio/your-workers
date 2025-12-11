@@ -15,8 +15,7 @@
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
 
-    <link rel="icon" href="assets/images/dark-favicon.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" href="assets/images/light-favicon.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="assets/images/light-favicon.png">
 
     <link rel="stylesheet" href="assets/css/swiper.css">
     <link rel="stylesheet" href="assets/fonts/fonts.css">
@@ -32,7 +31,7 @@
         id="header" x-data="{ open: false }" @keydown.window.escape="open = false">
         <div class="container">
             <div class="row flex justify-between not-sm:items-center gap-56">
-                <a class="logo_img" href="index.html" aria-label="Your workers | GmbH">
+                <a class="logo_img" href="javascript:;" aria-label="Your workers | GmbH">
                     <img src="assets/images/logo.svg" alt="Your workers logo"
                         class="w-[clamp(9.375rem,8.375rem+5vw,14.375rem)]">
                 </a>
@@ -132,7 +131,7 @@
         </div>
     </header>
     <main role="main">
-        <section class="relative z-10 flex items-center text-white text-center grow pt-100">
+        <section class="relative z-10 flex items-center text-white text-center grow pt-100 bg-black">
             <div class="container py-[30vw] lg:py-[12vw]">
                 <h1 class="text-h2 uppercase mb-30 xl:mb-60">
                     We work for you. <br> Unsere Crew für dein Event
@@ -738,7 +737,7 @@
                 </h3>
 
                 <div class="grid xsm:grid-cols-2 sm:grid-cols-3 p-4 lg:p-15 2xl:p-25" x-ref="fancybox_gallery">
-                    <div x-data="{ open: false }">
+                    <div class="cursor-pointer" x-data="{ open: false }">
                         <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
                             <img src="assets/images/referenzen-1.webp" alt="Referenzen Galeriebild"
                                 class="size-full object-cover">
@@ -752,23 +751,23 @@
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-2.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-2.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-3.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-3.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-4.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-4.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                     </div>
                                     <button
@@ -791,23 +790,23 @@
                                 <div class="swiper thumbs-slider w-full max-w-1400">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide aspect-video">
-                                            <img src="assets/images/gallery-img-1.webp"
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
                                                 class="size-full object-cover" />
                                         </div>
                                         <div class="swiper-slide aspect-video">
-                                            <img src="assets/images/gallery-img-2.webp"
+                                            <img alt="gallery-image" src="assets/images/gallery-img-2.webp"
                                                 class="size-full object-cover" />
                                         </div>
                                         <div class="swiper-slide aspect-video">
-                                            <img src="assets/images/gallery-img-3.webp"
+                                            <img alt="gallery-image" src="assets/images/gallery-img-3.webp"
                                                 class="size-full object-cover" />
                                         </div>
                                         <div class="swiper-slide aspect-video">
-                                            <img src="assets/images/gallery-img-4.webp"
+                                            <img alt="gallery-image" src="assets/images/gallery-img-4.webp"
                                                 class="size-full object-cover" />
                                         </div>
                                         <div class="swiper-slide aspect-video">
-                                            <img src="assets/images/gallery-img-1.webp"
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
                                                 class="size-full object-cover" />
                                         </div>
                                     </div>
@@ -824,7 +823,7 @@
                             </button>
                         </div>
                     </div>
-                    <div x-data="{ open: false }">
+                    <div class="cursor-pointer" x-data="{ open: false }">
                         <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
                             <img src="assets/images/referenzen-2.webp" alt="Referenzen Galeriebild"
                                 class="size-full object-cover">
@@ -834,27 +833,27 @@
                             @click.self="open = false">
                             <div x-show="open" x-transition.scale
                                 class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
-                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full grow max-h-[60vh]">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-2.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-2.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-3.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-3.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-4.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-4.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                     </div>
                                     <button
@@ -876,20 +875,25 @@
                                 </div>
                                 <div class="swiper thumbs-slider w-full max-w-1400">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-1.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-2.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-2.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-3.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-3.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-4.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-4.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-1.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
+                                                class="size-full object-cover" />
                                         </div>
                                     </div>
                                 </div>
@@ -905,7 +909,7 @@
                             </button>
                         </div>
                     </div>
-                    <div x-data="{ open: false }">
+                    <div class="cursor-pointer" x-data="{ open: false }">
                         <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
                             <img src="assets/images/referenzen-3.webp" alt="Referenzen Galeriebild"
                                 class="size-full object-cover">
@@ -915,27 +919,27 @@
                             @click.self="open = false">
                             <div x-show="open" x-transition.scale
                                 class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
-                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full grow max-h-[60vh]">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-2.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-2.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-3.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-3.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-4.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-4.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                     </div>
                                     <button
@@ -957,20 +961,25 @@
                                 </div>
                                 <div class="swiper thumbs-slider w-full max-w-1400">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-1.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-2.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-2.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-3.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-3.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-4.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-4.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-1.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
+                                                class="size-full object-cover" />
                                         </div>
                                     </div>
                                 </div>
@@ -986,7 +995,7 @@
                             </button>
                         </div>
                     </div>
-                    <div x-data="{ open: false }">
+                    <div class="cursor-pointer" x-data="{ open: false }">
                         <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
                             <img src="assets/images/referenzen-4.webp" alt="Referenzen Galeriebild"
                                 class="size-full object-cover">
@@ -996,27 +1005,27 @@
                             @click.self="open = false">
                             <div x-show="open" x-transition.scale
                                 class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
-                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full grow max-h-[60vh]">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-2.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-2.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-3.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-3.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-4.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-4.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                     </div>
                                     <button
@@ -1038,20 +1047,25 @@
                                 </div>
                                 <div class="swiper thumbs-slider w-full max-w-1400">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-1.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-2.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-2.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-3.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-3.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-4.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-4.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-1.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
+                                                class="size-full object-cover" />
                                         </div>
                                     </div>
                                 </div>
@@ -1067,7 +1081,7 @@
                             </button>
                         </div>
                     </div>
-                    <div x-data="{ open: false }">
+                    <div class="cursor-pointer" x-data="{ open: false }">
                         <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
                             <img src="assets/images/referenzen-5.webp" alt="Referenzen Galeriebild"
                                 class="size-full object-cover">
@@ -1077,27 +1091,27 @@
                             @click.self="open = false">
                             <div x-show="open" x-transition.scale
                                 class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
-                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full grow max-h-[60vh]">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-2.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-2.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-3.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-3.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-4.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-4.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                     </div>
                                     <button
@@ -1119,20 +1133,25 @@
                                 </div>
                                 <div class="swiper thumbs-slider w-full max-w-1400">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-1.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-2.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-2.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-3.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-3.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-4.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-4.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-1.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
+                                                class="size-full object-cover" />
                                         </div>
                                     </div>
                                 </div>
@@ -1148,7 +1167,7 @@
                             </button>
                         </div>
                     </div>
-                    <div x-data="{ open: false }">
+                    <div class="cursor-pointer" x-data="{ open: false }">
                         <div class="image aspect-[1.3/1] p-4 lg:p-15 2xl:p-25" @click="open = true">
                             <img src="assets/images/referenzen-6.webp" alt="Referenzen Galeriebild"
                                 class="size-full object-cover">
@@ -1158,27 +1177,27 @@
                             @click.self="open = false">
                             <div x-show="open" x-transition.scale
                                 class="bg-white p-16 xl:p-32 w-full size-full flex flex-col justify-center">
-                                <div class="swiper main-slider mb-10 xl:mb-32 w-full">
+                                <div class="swiper main-slider mb-10 xl:mb-32 w-full grow max-h-[60vh]">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-2.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-2.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-3.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-3.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-4.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-4.webp" />
                                         </div>
                                         <div class="swiper-slide">
                                             <img class="max-w-1400 mx-auto size-full object-cover"
-                                                src="assets/images/gallery-img-1.webp" />
+                                                alt="gallery-image" src="assets/images/gallery-img-1.webp" />
                                         </div>
                                     </div>
                                     <button
@@ -1200,20 +1219,25 @@
                                 </div>
                                 <div class="swiper thumbs-slider w-full max-w-1400">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-1.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-2.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-2.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-3.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-3.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-4.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-4.webp"
+                                                class="size-full object-cover" />
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/gallery-img-1.webp" />
+                                        <div class="swiper-slide aspect-video">
+                                            <img alt="gallery-image" src="assets/images/gallery-img-1.webp"
+                                                class="size-full object-cover" />
                                         </div>
                                     </div>
                                 </div>
@@ -1342,7 +1366,7 @@
         <div class="container">
             <div class="grid sm:grid-cols-2 md:grid-cols-3 2xl:flex gap-32 justify-between items-start flex-wrap mb-25 xl:mb-50">
                 <div>
-                    <a href="#" class="mb-10 xl:mb-20">
+                    <a href="javascript:;" class="mb-10 xl:mb-20">
                         <img src="assets/images/logo.svg" alt="Your workers GmbH" class="w-145">
                     </a>
                     <div class="text mb-10 xl:mb-20 max-w-280">
