@@ -356,9 +356,6 @@
   .aspect-\[2\.13\/1\] {
     aspect-ratio: 2.13/1;
   }
-  .aspect-square {
-    aspect-ratio: 1 / 1;
-  }
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
@@ -371,9 +368,6 @@
   }
   .max-h-0 {
     max-height: calc(var(--spacing) * 0);
-  }
-  .max-h-60 {
-    max-height: calc(var(--spacing) * 60);
   }
   .max-h-\[60vh\] {
     max-height: 60vh;
@@ -552,8 +546,21 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
   .border-off-white {
     border-color: var(--color-off-white);
+  }
+  .border-white {
+    border-color: var(--color-white);
+  }
+  .border-white\/50 {
+    border-color: color-mix(in srgb, #fff 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-white) 50%, transparent);
+    }
   }
   .\!bg-black {
     background-color: var(--color-black) !important;
@@ -614,6 +621,9 @@
   }
   .py-spc {
     padding-block: var(--spacing-spc);
+  }
+  .pt-12 {
+    padding-top: calc(var(--spacing) * 12);
   }
   .pt-100 {
     padding-top: calc(var(--spacing) * 100);
@@ -931,6 +941,11 @@
   .xl\:py-50 {
     @media (width >= 1200px) {
       padding-block: calc(var(--spacing) * 50);
+    }
+  }
+  .xl\:pt-24 {
+    @media (width >= 1200px) {
+      padding-top: calc(var(--spacing) * 24);
     }
   }
   .xl\:pr-250 {
