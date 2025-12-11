@@ -269,6 +269,9 @@
   .z-99999 {
     z-index: 99999;
   }
+  .z-999999 {
+    z-index: 999999;
+  }
   .container {
     width: 100%;
     @media (width >= 450px) {
@@ -353,6 +356,9 @@
   .aspect-\[2\.13\/1\] {
     aspect-ratio: 2.13/1;
   }
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
@@ -365,6 +371,12 @@
   }
   .max-h-0 {
     max-height: calc(var(--spacing) * 0);
+  }
+  .max-h-60 {
+    max-height: calc(var(--spacing) * 60);
+  }
+  .max-h-\[60vh\] {
+    max-height: 60vh;
   }
   .max-h-full {
     max-height: 100%;
@@ -597,17 +609,8 @@
   .py-30 {
     padding-block: calc(var(--spacing) * 30);
   }
-  .py-\[12vw\] {
-    padding-block: 12vw;
-  }
   .py-\[30vw\] {
     padding-block: 30vw;
-  }
-  .py-\[50\] {
-    padding-block: 50;
-  }
-  .py-\[50vw\] {
-    padding-block: 50vw;
   }
   .py-spc {
     padding-block: var(--spacing-spc);
@@ -928,11 +931,6 @@
   .xl\:py-50 {
     @media (width >= 1200px) {
       padding-block: calc(var(--spacing) * 50);
-    }
-  }
-  .xl\:py-\[12vw\] {
-    @media (width >= 1200px) {
-      padding-block: 12vw;
     }
   }
   .xl\:pr-250 {
